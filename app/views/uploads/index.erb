@@ -1,0 +1,22 @@
+
+
+
+<%= swf_upload_area "Upload images", :url => '/uploads/create',
+        :button_style => "font-family: Arial, sans-serif; font-size: 14pt; font-weight:bold;" %>
+
+
+
+		<br/>
+		<br/>
+		
+		<div id="blocks">asgs</div>
+		<br/>
+		<br/>
+
+
+<% form_for :upload, :html => {:multipart => true} do |f| %>
+	<%= f.text_field :title %>
+	<%= f.file_field :ufile %>
+	<%= submit_tag %>
+<% end %>
+
