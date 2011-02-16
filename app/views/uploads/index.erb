@@ -2,6 +2,7 @@
 
 
 <%= swf_upload_area "Upload images", :url => '/uploads/create',
+		:file_size_limit: "<%= 70.megabytes %>",
         :button_style => "font-family: Arial, sans-serif; font-size: 14pt; font-weight:bold;" %>
 
 

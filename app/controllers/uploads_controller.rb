@@ -27,7 +27,7 @@ class UploadsController < ApplicationController
     #if params[:upload] != ''
     #  @upload = Upload.create(params[:upload])
     #end
-  end
+  end 
 
   def create
     
