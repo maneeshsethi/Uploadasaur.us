@@ -5,11 +5,8 @@ class UploadsController < ApplicationController
   
   
   def index
-    logger.debug "in index"
     # if something was submitted
     if params[:File]
-      logger.debug "\ngsdfsdfgd"
-      logger.debug (swf_uploaded_data)
       @ufile = Upload.create(:ufile => swf_upload_data) # here you can use your favourite plugin to work with attachments
       
       

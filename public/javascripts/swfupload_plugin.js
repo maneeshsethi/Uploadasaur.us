@@ -93,9 +93,10 @@ var FlashUploader = Class.create({
 		alert(message)
 		this.currentFileIndex ++
 	},
+	
+	
 	uploadSuccess: function(file, serverData) {
 		this.uploadProgress(file, 1, 1)
-
 		$(this.fileDomId(file)).fade({duration: 0.5, afterFinish: function(obj) {
 			obj.element.remove()
 		}.bind(this)})
