@@ -50,7 +50,7 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_newtryuploadasaurus_session',
+    :session_key => '_uploadasaurus_session',
     :secret      => 'd7fe7ff16332f15ab7c39e5c2006359aeb3e7172134b4ddec6907dc570fc65c6fd616bf897f93177e0160dcc7e376f575b3b4adc5a54f61ac946efff179bf061'
   }
 
