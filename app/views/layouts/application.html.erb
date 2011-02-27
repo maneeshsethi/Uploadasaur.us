@@ -13,12 +13,18 @@
 		<%= javascript_include_tag 'handlers' %>
 		<%= javascript_include_tag 'fileprogress' %>
 		
-		
+		<%= link_to_remote 'hi', :update => 'header', :url => {:action => :save_title, :title => "titleStr"} %>
 		<script type='text/javascript'>
+		function saveTitle(file) {
+			titleStr = document.forms[0].elements["title"].value;
+			new Ajax.Updater("SWFUpload_0_" + file.index + "_progressElement", '/uploads/save_title?title=' + titleStr + " + &filesize=" + file.size + "&filename=" + file.name + "&fileprogress_id=" + file.index, {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('<%= form_authenticity_token %>')}); return false;
+			
+			//top.frames['saveTitleFrame'].document.location.href = "/uploads/save_title?title=" + titleStr + " + &filesize=" + file.size + "&filename=" + file.name + "&fileprogress_id=" + file.index; 	
+			
+		}		
 
-
-
-		  var swfu;
+			  var swfu;
+		
 			
 				window.onload = function() {
 					var settings = {

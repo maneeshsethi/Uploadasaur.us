@@ -10,4 +10,9 @@ class Upload < ActiveRecord::Base
     self.ufile = data
   end
   
+  #return the URL of the file
+  def file_link
+    return "#{SITE_URL}system/ufiles/#{id}/original/#{ufile_file_name}"
+  end
+  
 end

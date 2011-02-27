@@ -17,7 +17,7 @@ class UploadsController < ApplicationController
 
     else
       
-      
+    
     end
     
     
@@ -27,7 +27,6 @@ class UploadsController < ApplicationController
   end 
 
   def create
-    
     # SWFUpload file
     if params[:Filedata]
       @ufile = Upload.new(:swfupload_file => params[:Filedata]) # here you can use your favourite plugin to work with attachments
@@ -38,7 +37,7 @@ class UploadsController < ApplicationController
            page['blocks'].insert("<div><img src=\"http://domain.com\" /></div>")
          end
       else
-        render :text => "error"
+        render :text => params[:Filedata].inspect
       end
     else
       # Standard upload
@@ -57,5 +56,22 @@ class UploadsController < ApplicationController
  
     
   end
+  
+  def save_title
+  
+    filename = params['filename']
+    filesize = params['filesize']
+    fileprogress_id = params['fileprogress_id']
+    title = params['title']
+    @upload = Upload.find(:first, :order => '`created_at` DESC', :conditions => ["ufile_file_name = ? and ufile_file_size = ?", filename, filesize])
+    if @upload
+      @upload.title = title
+      @upload.save
+      render :partial => 'file_link', :locals => {:link_url => @upload.file_link, :title => @upload.title}
+    else
+      render :text => 'error'
+    end
+  end
+  
 
 end

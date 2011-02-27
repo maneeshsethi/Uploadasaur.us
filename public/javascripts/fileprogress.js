@@ -23,6 +23,7 @@ function FileProgress(file, targetID) {
 
 		this.fileProgressElement = document.createElement("div");
 		this.fileProgressElement.className = "progressContainer";
+		this.fileProgressElement.id = this.fileProgressID + "_progressElement";
 
 		var progressCancel = document.createElement("a");
 		progressCancel.className = "progressCancel";
@@ -40,7 +41,7 @@ function FileProgress(file, targetID) {
 		var progressStatus = document.createElement("div");
 		progressStatus.className = "progressBarStatus";
 		progressStatus.innerHTML = "&nbsp;";
-
+	
 		this.fileProgressElement.appendChild(progressCancel);
 		this.fileProgressElement.appendChild(progressText);
 		this.fileProgressElement.appendChild(progressStatus);
@@ -92,9 +93,9 @@ FileProgress.prototype.setComplete = function () {
 	this.fileProgressElement.childNodes[3].style.width = "";
 
 	var oSelf = this;
-	this.setTimer(setTimeout(function () {
+	/*this.setTimer(setTimeout(function () {
 		oSelf.disappear();
-	}, 10000));
+	}, 10000));*/
 };
 FileProgress.prototype.setError = function () {
 	this.fileProgressElement.className = "progressContainer red";

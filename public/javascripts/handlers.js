@@ -62,7 +62,7 @@ function fileQueueError(file, errorCode, message) {
 function fileDialogComplete(numFilesSelected, numFilesQueued) {
 	try {
 		if (numFilesSelected > 0) {
-			document.getElementById(this.customSettings.cancelButtonId).disabled = false;
+//TODO			document.getElementById(this.customSettings.cancelButtonId).disabled = false;
 		}
 		
 		/* I want auto start the upload and I can do that here */
@@ -94,7 +94,7 @@ function uploadProgress(file, bytesLoaded, bytesTotal) {
 
 		var progress = new FileProgress(file, this.customSettings.progressTarget);
 		progress.setProgress(percent);
-		progress.setStatus("Uploading...");
+		progress.setStatus("Uploading... " + percent + "% complete");
 	} catch (ex) {
 		this.debug(ex);
 	}
@@ -164,7 +164,11 @@ function uploadError(file, errorCode, message) {
     }
 }
 
+
 function uploadComplete(file) {
+	//Save the title into the database by calling the javascript function in the layout application.html.erb
+	saveTitle(file);
+	
 	if (this.getStats().files_queued === 0) {
 		document.getElementById(this.customSettings.cancelButtonId).disabled = true;
 	}
