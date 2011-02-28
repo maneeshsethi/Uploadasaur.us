@@ -67,7 +67,7 @@ class UploadsController < ApplicationController
     if @upload
       @upload.title = title
       @upload.save
-      render :partial => 'file_link', :locals => {:link_url => @upload.file_link, :title => @upload.title}
+      render :partial => 'file_link', :locals => {:link_url => @upload.file_link, :title => @upload.title, :id => @upload.id}
     else
       render :text => 'error'
     end

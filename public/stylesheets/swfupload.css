@@ -89,7 +89,7 @@ fieldset.flash
 
 
 .progressWrapper {
-	width: 357px;
+	width: 600px;
 	overflow: hidden;
 }
 .progressContainer {
@@ -118,13 +118,13 @@ fieldset.flash
 }
 
 .progressName {
-	font-size: 8pt;
+	font-size: 14pt;
 	font-weight: bold;
 	color: #555555;
 	
-	width: 323px;
-	height: 14px;
-	text-align: left;
+	width: 600px;
+	height: 32px;
+	text-align: center;
 	white-space: nowrap;
 	overflow: hidden;
 }
@@ -148,11 +148,11 @@ fieldset.flash
 	visibility: hidden;
 }
 .progressBarStatus {
-	margin-top: 2px;
-	width: 337px;
-	font-size: 7pt;
+	margin-top: 6px;
+	width: 600px;
+	font-size: 12pt;
 	font-family: Verdana;
-	text-align: left;
+	text-align: center;
 	white-space: nowrap;
 }
 a.progressCancel,

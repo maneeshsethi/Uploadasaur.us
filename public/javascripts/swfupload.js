@@ -152,7 +152,7 @@ SWFUpload.prototype.initSettings = function () {
 	this.ensureDefault("button_text_style", "color: #000000; font-size: 16pt;");
 	this.ensureDefault("button_text_top_padding", 0);
 	this.ensureDefault("button_text_left_padding", 0);
-	this.ensureDefault("button_action", SWFUpload.BUTTON_ACTION.SELECT_FILES);
+	this.ensureDefault("button_action", SWFUpload.BUTTON_ACTION.SELECT_FILE);
 	this.ensureDefault("button_disabled", false);
 	this.ensureDefault("button_placeholder_id", "");
 	this.ensureDefault("button_placeholder", null);

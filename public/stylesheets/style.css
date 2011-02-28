@@ -1,0 +1,304 @@
+/* @override 
+	http://www.iwillteachyoutoberich.com/earn1k/backup/style.css
+	http://earn1k.com/beyond-new/style.css
+*/
+
+body {
+	background-color: #f0f0f0;
+	font: 87.5%/1.5 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#progress-bar img {
+	padding-bottom: 17px;
+	border-bottom: 2px solid #868882;
+}
+
+#page {
+	margin: 40px auto 0;
+	border: 1px solid #dce3e3;
+	width: 54em;
+	background-color: #fff;
+}
+
+
+
+#textblock {
+	margin-right: 12em;
+	margin-top: 1.28572em;
+	margin-left: 6em;
+}
+
+h1, h2, h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h1 {
+	font-size: 2.57143em;
+	letter-spacing: -1px;
+	padding-top: 0;
+	padding-right: 0;
+}
+
+h2 {
+	font-size: 1.5em;
+	border-bottom: 1px solid #d7dada;
+	color: #333;
+	text-align: center;
+	margin-top: 1.75em;
+	margin-right: 0;
+	margin-bottom: 1.75em;
+	margin-left: 0;
+	padding-top: -20px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+
+#mainheadline h3 {
+	font-size: 1.28571em;
+	padding-top: 1em;
+	padding-right: 0;
+	padding-left: 1.7em;
+	text-align: center;
+}
+
+#logo {
+	margin-bottom: 20px;
+	padding-bottom: 12px;
+	float: left;
+	margin-top: 15px;
+	width: 100%;
+	border-bottom: 2px solid #868882;
+
+}
+
+p {
+	margin: 0px;
+}
+
+li {
+	margin-bottom: 1em;
+}
+
+.left-pic {
+	float: right;
+	display: block;
+}
+
+#textblock div.guestspeaker h4 {
+	margin-top: 0;
+	font: bold 1.28571em Georgia, "Times New Roman", Times, serif;
+}
+
+#textblock div.left-pic img {
+	border: 1px solid #bcbebe;
+	background-color: #f0f0f0;
+	margin-left: 17px;
+	padding: 7px;
+	margin-top: 6px;
+}
+
+#sub-head p{
+	font-size: 1.5em;
+	margin: -30px 0 1.75em;
+	border-bottom: 1px solid #d7dada;
+	color: #333;
+	font-weight: bold;
+}
+
+.guestspeaker {
+	padding: 25px;
+	width: 100%;
+	margin-top: 15px;
+	background-color: #e4e8df;
+	display: inline-block;
+	border-top: 10px solid #cacbcb;
+	border-bottom: 10px solid #cacbcb;
+	margin-bottom: 10px;
+}
+
+#guesttext {
+	float: left;
+	display: inline-block;
+}
+
+blockquote {
+	background: #f0f0f0 url(http://earn1K.com/sales-images/quote.png) no-repeat;
+	margin: 0;
+		padding: 15 15 15 0px;
+}
+
+blockquote p {
+	margin: 0;
+	padding-left: 60;
+
+}
+cite p{
+
+}
+
+#calc-how-much-will-you-make-input-1 {
+	width: 80px;
+	text-align: center;
+}
+
+#calc-how-much-will-you-make-input-2 {
+	width: 30px;
+	margin-right: 5px;
+	text-align: center;
+}
+#quotelist{
+	
+	width: 100%;
+	margin-top: 15px;
+	display: inline-block;
+	font-style: italic;
+	border-left: 10px solid #cacbcb;
+	padding-left: 25px;
+}
+
+#salesbox {
+	padding: 10px 40px 0;
+	margin-bottom: 40px;
+	border: 3px dashed red;
+	list-style-image: url(http://earn1k.com/sales-images/green-check.gif);
+	text-align: center;
+	width: 400px;
+	margin-left: 50px;
+}
+
+#salesbox h3 {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 24px;
+	padding: 15px;
+}
+
+#orderbutton {
+	text-align: center;
+	padding-bottom: 15px;
+	padding-top: 0px;
+}
+#orderbutton-new{
+	padding-bottom: 15px;
+	padding-top: 0px;
+	text-align: center;
+	float: none;
+	margin-left: 70px;
+}
+
+#check li p {
+	margin-left: 8px;
+}
+
+#gray-checks {
+	list-style-image: url(http://earn1k.com/sales-images/gray-check.gif);
+}
+
+#gray-checks p{
+	margin-left: 8px;
+	text-decoration: line-through;
+}
+
+#calbox {
+	padding: 0 25 25 25px;
+	width: 100%;
+	margin-top: 15px;
+	background-color: #e4e8df;
+	display: inline-block;
+	border-top: 10px solid #cacbcb;
+	border-bottom: 10px solid #cacbcb;
+	margin-bottom: 10px;
+}
+
+#examplebox {
+	padding: 25px;
+	width: 100%;
+	margin-top: 15px;
+	background-color: #e4e8df;
+	display: inline-block;
+	border-top: 10px solid #cacbcb;
+	border-bottom: 10px solid #cacbcb;
+	margin-bottom: 10px;
+}
+
+#sourcequote {
+	font-size: 12px;
+	margin-left: 40px;
+}
+
+#timebox {
+	padding-left: 25px;
+	padding-right: 25px;
+	width: 100%;
+	margin-top: 15px;
+	background-color: #e4e8df;
+	display: inline-block;
+	border-top: 10px solid #cacbcb;
+	border-bottom: 10px solid #cacbcb;
+	margin-bottom: 10px;
+}
+
+#calc-how-much-will-you-make-result-2 {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+
+#weekbox {
+	padding: 25 25 0 25px;
+	width: 100%;
+	margin-top: 15px;
+	background-color: #e4e8df;
+	display: inline-block;
+	border-top: 10px solid #cacbcb;
+	border-bottom: 10px solid #cacbcb;
+	margin-bottom: 10px;
+}
+
+#weekbox h3 {
+	padding: 0;
+}
+
+#weekbox ul {
+	padding-bottom: 15px;
+}
+
+#weekbox li {
+	margin-bottom: 9px;
+}
+
+#credits {
+	color: #949595;
+	text-align: center;
+}
+
+
+#textblock div.AuthorizeNetSeal {
+	margin-top: 40px;
+}
+
+#foryoubox h3{
+	padding-bottom: 0;
+	padding-top: 10;
+}
+
+#price {
+	margin-top: 23px;
+	text-align: center;
+	color: #1b116a;
+	font-size: 38px;
+}
+
+#broughttoyou {
+	float: right;
+	padding-top: 48px;
+	font-size: 14px;
+}
+
+#mainheadline h1{
+	padding-top: 30px;
+	color: #1c1c1c;
+	text-align: center;
+	padding-left: 1.7em;
+}

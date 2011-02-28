@@ -2,8 +2,9 @@
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
-		<title>SWFUpload Test in Rails</title>
+		<title>Uploadasaur.us - Upload and send your file to anyone, for free!</title>
 		<%= stylesheet_link_tag 'swfupload'%>
+		<%= stylesheet_link_tag 'style' %>
 		<%= javascript_include_tag :defaults %>
 		
 		<%= javascript_include_tag 'swfupload' %>
@@ -13,7 +14,6 @@
 		<%= javascript_include_tag 'handlers' %>
 		<%= javascript_include_tag 'fileprogress' %>
 		
-		<%= link_to_remote 'hi', :update => 'header', :url => {:action => :save_title, :title => "titleStr"} %>
 		<script type='text/javascript'>
 		function saveTitle(file) {
 			titleStr = document.forms[0].elements["title"].value;
@@ -40,12 +40,13 @@
 							progressTarget : "fsUploadProgress",
 							cancelButtonId : "btnCancel"
 						},
-						debug: true,
+						debug: false,
 
 						// Button settings
-						button_width: "65",
-						button_height: "29",
-						button_image_url: "../images/rails.png",
+						button_width: "142",
+						button_height: "60",
+						button_padding_top: "100px",
+						button_image_url: "../images/uploadbutton.png",
 						button_placeholder_id: "spanButtonPlaceHolder",
 
 						// The event handler functions are defined in handlers.js
@@ -70,16 +71,29 @@
 		
 		
 	</head>
-	<body>
-		<div id="container">
-			<div id="header">
-				<h1><%= link_to 'SWFUpload Test' %></h1>
-			</div>
-			<div id="main">
-				<% if flash[:notice] %><div id="notice"><%= flash[:notice] %></div><% end %>
-				<% if flash[:warning] %><div id="warning"><%= flash[:warning] %></div><% end %>
-				<%= yield :layout %>
-			</div>
+	<body> 
+
+
+	<div id="page"> 
+	<div id="textblock"> 
+	<div id="logo"><img alt="Uploadasaur.us" title="Uploadasaur.us" src="/images/logo.png" /><br> 
+
+
+	</div> 
+
+	<div id="main">
+		<% if flash[:notice] %><div id="notice"><%= flash[:notice] %></div><% end %>
+		<% if flash[:warning] %><div id="warning"><%= flash[:warning] %></div><% end %>
+		<%= yield :layout %>
+	</div>
+	<div id="mainheadline"> 
+	<h1>Choose some files.</h1> 
+	<h1>Get a link.</h1>
+	<h1>Share</h1> 
+	
+	</div>
+
+			
 		</div>
 		<!-- 
 			Include your js at the bottom for faster 
