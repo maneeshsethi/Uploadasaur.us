@@ -16,7 +16,8 @@
 		
 		<script type='text/javascript'>
 		function saveTitle(file) {
-			titleStr = document.forms[0].elements["title"].value;
+			
+			titleStr = document.getElementById("SWFUpload_0_" + file.index + "_title").value; //document.forms[0].elements["title"].value;
 			new Ajax.Updater("SWFUpload_0_" + file.index + "_progressElement", '/uploads/save_title?title=' + titleStr + " + &filesize=" + file.size + "&filename=" + file.name + "&fileprogress_id=" + file.index, {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('<%= form_authenticity_token %>')}); return false;
 			
 			//top.frames['saveTitleFrame'].document.location.href = "/uploads/save_title?title=" + titleStr + " + &filesize=" + file.size + "&filename=" + file.name + "&fileprogress_id=" + file.index; 	
@@ -74,27 +75,26 @@
 	<body> 
 
 
-	<div id="page"> 
-	<div id="textblock"> 
-	<div id="logo"><img alt="Uploadasaur.us" title="Uploadasaur.us" src="/images/logo.png" /><br> 
+		<div id="page"> 
+			<div id="textblock"> 
+				<div id="logo"><img alt="Uploadasaur.us" title="Uploadasaur.us" src="/images/logo.png" /></div> 
+				
 
-
-	</div> 
-
+				<% if flash[:notice] %><div id="notice"><%= flash[:notice] %></div><% end %>
+				<% if flash[:warning] %><div id="warning"><%= flash[:warning] %></div><% end %>
 	<div id="main">
-		<% if flash[:notice] %><div id="notice"><%= flash[:notice] %></div><% end %>
-		<% if flash[:warning] %><div id="warning"><%= flash[:warning] %></div><% end %>
-		<%= yield :layout %>
-	</div>
-	<div id="mainheadline"> 
-	<h1>Choose some files.</h1> 
-	<h1>Get a link.</h1>
-	<h1>Share</h1> 
-	
-	</div>
-
+					<%= yield :layout %>
 			
-		</div>
+					</div>
+				
+				<div class="call-to-action"> 
+					<h1>Choose file.</h1> 
+					<h1>Get link.</h1>
+					<h1>Share.</h1> 
+				</div>
+			
+
+			</div>
 		<!-- 
 			Include your js at the bottom for faster 
 			loading. Thanks YSlow!

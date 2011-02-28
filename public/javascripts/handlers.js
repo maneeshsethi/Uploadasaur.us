@@ -93,6 +93,7 @@ function uploadProgress(file, bytesLoaded, bytesTotal) {
 		var percent = Math.ceil((bytesLoaded / bytesTotal) * 100);
 
 		var progress = new FileProgress(file, this.customSettings.progressTarget);
+	
 		progress.setProgress(percent);
 		progress.setStatus("Uploading... " + percent + "% complete");
 	} catch (ex) {
@@ -170,7 +171,7 @@ function uploadComplete(file) {
 	saveTitle(file);
 	
 	if (this.getStats().files_queued === 0) {
-		document.getElementById(this.customSettings.cancelButtonId).disabled = true;
+//		document.getElementById(this.customSettings.cancelButtonId).disabled = true;
 	}
 }
 

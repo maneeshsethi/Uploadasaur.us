@@ -55,6 +55,7 @@ h2 {
 	padding-left: 0px;
 }
 
+
 #mainheadline h3 {
 	font-size: 1.28571em;
 	padding-top: 1em;
@@ -66,8 +67,6 @@ h2 {
 #logo {
 	margin-bottom: 20px;
 	padding-bottom: 12px;
-	float: left;
-	margin-top: 15px;
 	width: 100%;
 	border-bottom: 2px solid #868882;
 
@@ -186,6 +185,13 @@ cite p{
 	text-align: center;
 	float: none;
 	margin-left: 70px;
+}
+
+.call-to-action{
+	text-align: center;
+	padding-left:110px;
+	
+	
 }
 
 #check li p {

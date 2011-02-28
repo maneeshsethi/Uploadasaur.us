@@ -4,6 +4,7 @@ class UploadsController < ApplicationController
   session :cookie_only => false, :only => :create
   
   
+  
   def index
     # if something was submitted
     if params[:File]
@@ -62,7 +63,7 @@ class UploadsController < ApplicationController
     filename = params['filename']
     filesize = params['filesize']
     fileprogress_id = params['fileprogress_id']
-    title = params['title']
+    title = params['title'].strip
     @upload = Upload.find(:first, :order => '`created_at` DESC', :conditions => ["ufile_file_name = ? and ufile_file_size = ?", filename, filesize])
     if @upload
       @upload.title = title

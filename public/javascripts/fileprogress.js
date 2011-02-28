@@ -33,7 +33,12 @@ function FileProgress(file, targetID) {
 
 		var progressText = document.createElement("div");
 		progressText.className = "progressName";
-		progressText.appendChild(document.createTextNode(file.name));
+		var progressTitle = document.createElement("input");
+		progressTitle.id = this.fileProgressID + "_title";
+
+		progressText.appendChild(progressTitle);
+		
+//		progressText.appendChild(document.createTextNode(file.name));
 
 		var progressBar = document.createElement("div");
 		progressBar.className = "progressBarInProgress";
@@ -50,6 +55,9 @@ function FileProgress(file, targetID) {
 		this.fileProgressWrapper.appendChild(this.fileProgressElement);
 
 		document.getElementById(targetID).appendChild(this.fileProgressWrapper);
+		
+		
+		
 	} else {
 		this.fileProgressElement = this.fileProgressWrapper.firstChild;
 		this.reset();
