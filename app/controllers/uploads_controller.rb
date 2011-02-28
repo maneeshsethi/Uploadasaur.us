@@ -70,8 +70,23 @@ class UploadsController < ApplicationController
       @upload.save
       render :partial => 'file_link', :locals => {:link_url => @upload.file_link, :title => @upload.title, :id => @upload.id}
     else
-      render :text => 'error'
+      render :text => 'File not uploaded. Please try again.'
     end
+  end
+  
+  def change_title
+    @upload = Upload.find(params[:id])
+    
+    if @upload
+      @upload.title = params[:title]
+      @upload.save
+      render :partial => 'save_text_complete', :locals => {:id => @upload.id}
+    else
+      flash[:warning] = "Error, Title cannot be changed."
+      redirect_to '/'
+    end
+    
+  
   end
   
 

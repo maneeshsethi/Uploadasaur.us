@@ -15,6 +15,22 @@
 		<%= javascript_include_tag 'fileprogress' %>
 		
 		<script type='text/javascript'>
+		
+		function clearSaveText(elem_id) {
+			saveText = document.getElementById('save_text_' + elem_id);
+			saveText.innerHTML="";
+			
+			
+		}
+		
+		function changeTitle(elem_id) {
+			titleStr = document.getElementById('title_' + elem_id).value
+			
+			new Ajax.Updater("save_text_" + elem_id, '/uploads/change_title?title=' + titleStr + '&id=' + elem_id, {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('<%= form_authenticity_token %>')}); return false;
+				
+			
+		}
+		
 		function saveTitle(file) {
 			
 			titleStr = document.getElementById("SWFUpload_0_" + file.index + "_title").value; //document.forms[0].elements["title"].value;
@@ -22,7 +38,8 @@
 			
 			//top.frames['saveTitleFrame'].document.location.href = "/uploads/save_title?title=" + titleStr + " + &filesize=" + file.size + "&filename=" + file.name + "&fileprogress_id=" + file.index; 	
 			
-		}		
+		}	
+		
 
 			  var swfu;
 		

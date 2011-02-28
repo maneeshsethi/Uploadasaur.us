@@ -1,2 +1,5 @@
-<div class="progressName"><input id="<%= id %>" value="<%= title %>"></input></div>
+<script>
+setInterval("changeTitle(<%= id %>)", 2000);
+</script>
+<div class="progressName" id="progress_name_<%= id %>"><input id="title_<%= id %>" value="<%= title %>" onChange="clearSaveText(<%= id %>)" onKeyPress="clearSaveText(<%= id %>)" onBlur="clearSaveText(<%= id %>)"></input> <span id="save_text_<%= id %>" class='green'>Saved!</span></div>
 <div class="progressBarStatus"><a href="<%= link_url %>"><%= link_url %></a></div>
