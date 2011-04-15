@@ -6,25 +6,20 @@ class UploadsController < ApplicationController
   
   
   def index
-    # if something was submitted
-    if params[:File]
-      @ufile = Upload.create(:ufile => swf_upload_data) # here you can use your favourite plugin to work with attachments
-      
-      
-      # use RJS here
-      render :update do |page|
-        page['blocks'].insert("<div><img src=\"http://domain.com\" /></div>")
+
+    #refresh due to TamperWithCookie exception on first session call http://groups.google.com/group/rubyonrails-talk/browse_thread/thread/ad918b9f59a017bc
+      if cookies[:refreshed] != 'true'
+        cookies[:refreshed] = 'true'
+        layout_to_render = 'refresh'
+      else
+        layout_to_render = 'default'
       end
 
+    if layout_to_render == 'refresh'
+      render :layout => 'refresh'
     else
-      
-    
+      render :layout => 'default'
     end
-    
-    
-    #if params[:upload] != ''
-    #  @upload = Upload.create(params[:upload])
-    #end
   end 
 
   def create
@@ -80,7 +75,7 @@ class UploadsController < ApplicationController
     if @upload
       @upload.title = params[:title]
       @upload.save
-      render :partial => 'save_text_complete', :locals => {:id => @upload.id}
+      render :partial => 'save_text_complete', :locals => {:title => @upload.title, :id => @upload.id}
     else
       flash[:warning] = "Error, Title cannot be changed."
       redirect_to '/'
