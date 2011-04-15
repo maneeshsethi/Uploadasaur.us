@@ -6,49 +6,26 @@ class UploadsController < ApplicationController
   
   
   def index
-    # if something was submitted
-    if params[:File]
-      @ufile = Upload.create(:ufile => swf_upload_data) # here you can use your favourite plugin to work with attachments
-      
-      
-      # use RJS here
-      render :update do |page|
-        page['blocks'].insert("<div><img src=\"http://domain.com\" /></div>")
-      end
-
-    else
-      
-    
-    end
-    
-    
-    #if params[:upload] != ''
-    #  @upload = Upload.create(params[:upload])
-    #end
+   
   end 
 
   def create
     # SWFUpload file
+    
+    #bug with .app files, they won't work with swf upload. Also, all files must have an extension.
+    if File.extname(params[:Filename]) == "" or File.extname(params[:Filename]) == ".app" 
+      return
+    end
+    
     if params[:Filedata]
-      @ufile = Upload.new(:swfupload_file => params[:Filedata]) # here you can use your favourite plugin to work with attachments
-      @results = @ufile.save
-      logger.debug("ajx @#{@results} ")
-      if @ufile.save
-        render :update do |page|
-           page['blocks'].insert("<div><img src=\"http://domain.com\" /></div>")
-         end
-      else
-        render :text => params[:Filedata].inspect
+
+     @ufile = Upload.create(:swfupload_file => params[:Filedata])
+
+      render :update do |page|
+
       end
-    else
-      # Standard upload
-      @photo = Photo.new params[:photo]
-      if @photo.save
-        flash[:notice] = 'Your photo has been uploaded!'
-        redirect_to photos_path
-      else
-        render :action => :new
-      end
+  
+      
     end
     
     
@@ -61,6 +38,14 @@ class UploadsController < ApplicationController
   def save_title
   
     filename = params['filename']
+    
+    #if the file was a .app or w/out extension, return.
+    if File.extname(filename) == ".app" 
+      render :text => "File not uploaded. *.app files cannot be uploaded" and return
+    elsif   File.extname(filename) == ""
+      render :text => "File not uploaded. File must have an extension." and return
+    end
+    
     filesize = params['filesize']
     fileprogress_id = params['fileprogress_id']
     title = params['title'].strip
